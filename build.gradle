@@ -34,3 +34,16 @@ dependencies {
 tasks.named('test') {
 	useJUnitPlatform()
 }
+tasks.named('jar') {
+	archiveClassifier = '' // plain.jar 생성 방지
+}
+tasks.register('getAppName') {
+		doLast {
+			println "${rootProject.name}"
+		}
+}
+tasks.register('getAppVersion') {
+		doLast {
+			println "${project.version}"
+		}
+}
