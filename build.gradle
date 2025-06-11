@@ -5,7 +5,7 @@ plugins {
 }
 
 group = 'com.welab'
-version = '0.0.1-SNAPSHOT'
+version = '0.0.2'
 
 java {
 	toolchain {
@@ -34,16 +34,14 @@ dependencies {
 tasks.named('test') {
 	useJUnitPlatform()
 }
-tasks.named('jar') {
-	archiveClassifier = '' // plain.jar 생성 방지
+jar {
+	enabled = false // plain.jar 생성 완전히 비활성화
 }
 tasks.register('getAppName') {
 		doLast {
-			println "${rootProject.name}"
-		}
+			println "${rootProject.name}" }
 }
 tasks.register('getAppVersion') {
 		doLast {
-			println "${project.version}"
-		}
+			println "${project.version}" }
 }
