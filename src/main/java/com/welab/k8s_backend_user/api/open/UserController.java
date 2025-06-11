@@ -1,5 +1,6 @@
 package com.welab.k8s_backend_user.api.open;
 
+import com.welab.k8s_backend_user.common.dto.ApiResponseDto;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(value="/api/user/v1", produces= MediaType.APPLICATION_JSON_VALUE)
 public class UserController {
     @GetMapping(value = "/test")
-    public String test () {
-        return "Hello Kubernetes";
+    public ApiResponseDto<String> test() {
+        return ApiResponseDto.createOk("안녕 backend-user k8s");
     }
 }
