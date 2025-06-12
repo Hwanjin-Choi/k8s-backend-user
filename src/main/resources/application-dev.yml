@@ -2,6 +2,8 @@ server:
   port: 8080
 
 spring:
+  kafka:
+    bootstrap-servers: k8s-external-kafka-service:9092
   datasource:
     # 데이터베이스 연결을 위한 URL입니다.
     # 서비스 이름(k8s-external-user-mysqlservice)을 사용하여 클러스터 내부에서 통신합니다.
@@ -31,5 +33,4 @@ spring:
     # false로 설정하는 것이 성능 및 예기치 않은 동작 방지에 권장됩니다.
     open-in-view: false
 
-  kafka:
-    bootstrap-servers: k8s-external-kafka-service:9092
+
