@@ -20,6 +20,7 @@ public class UserAuthController {
     private final SiteUserService siteUserService;
     @PostMapping(value = "/register")
     public ApiResponseDto<String> register(@RequestBody @Valid SiteUserRegisterDto registerDto) {
+        System.out.println("HHAHASHDHS");
         siteUserService.registerUser(registerDto);
         return ApiResponseDto.defaultOk();
     }
