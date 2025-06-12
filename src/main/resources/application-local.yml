@@ -30,3 +30,6 @@ spring:
     # OSIV(Open Session In View) 패턴 사용 여부입니다.
     # false로 설정하는 것이 성능 및 예기치 않은 동작 방지에 권장됩니다.
     open-in-view: false
+
+  kafka:
+    bootstrap-servers: localhost:9092
