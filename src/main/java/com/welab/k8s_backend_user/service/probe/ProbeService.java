@@ -63,11 +63,11 @@ public class ProbeService {
         }
 
         // 2. 애플리케이션 내부 초기화 작업 완료 여부 확인
-        if (!isInitialized()) {
+        /*if (!isInitialized()) {
             log.warn("Readiness probe failed: Application is not fully initialized yet.");
             throw new RuntimeException("Readiness probe failed: Application is not initialized.");
         }
-
+        */
         // TODO: 이 외에도 캐시 워밍업, 주요 설정 로딩 완료 등
         //       서비스가 요청을 처리하기 위해 반드시 필요한 조건들을 추가로 확인합니다.
     }
