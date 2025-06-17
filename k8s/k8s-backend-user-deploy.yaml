@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: k8s-backend-user-deployment-v7
+  name: k8s-backend-user-deployment-v8
 spec:
   replicas: 3  # 원하는 파드 복제본 수 (기본값: 1)
   selector:
     matchLabels:
       app: k8s-backend-user  # 템플릿의 labels와 일치해야 함
-      ver: v7
+      ver: v8
   template:
     metadata:
       labels:
         app: k8s-backend-user  # selector와 일치해야 함
-        ver: v7
+        ver: v8
     spec:
       containers:
         - name: k8s-backend-user
-          image: moonuche/k8s-backend-user:0.0.7
+          image: moonuche/k8s-backend-user:0.0.8
           imagePullPolicy: Always
           env:
             - name: SPRING_PROFILES_ACTIVE
